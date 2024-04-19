@@ -42,7 +42,7 @@ app.post("/posts", (req, res) => {
 
   db.query(query, [values], (err, data) => {
     if (err) return res.send(err);
-    return res.json(data);
+    return res.json("post has been updated");
   });
 });
 
