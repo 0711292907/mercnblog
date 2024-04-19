@@ -41,7 +41,7 @@ app.post("/posts", (req, res) => {
   const values = [
     "the",
     "mmsnhdhdhd",
-    "gim"
+    "MElsoft"
   ];
 
   db.query(query, [values], (err, data) => {
