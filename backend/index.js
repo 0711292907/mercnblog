@@ -31,7 +31,7 @@ app.get("/posts", (req, res) => {
 
 
 app.post("/posts", (req, res) => {
-  const query = "INSERT INTO posts(`title`, `descr`, `user_name`) VALUES (?)";
+  const q = "INSERT INTO posts(`title`, `descr`, `user_name`) VALUES (?)";
 
   const values = [
     "Good day",
