@@ -1,7 +1,6 @@
 import express from "express";
 import mysql from "mysql2";
 
-const app = express();
 
 const db = mysql.createConnection({
   host: "localhost",
@@ -11,7 +10,12 @@ const db = mysql.createConnection({
 });
 
 
+// Create the Express app
+const app = express();
+
+// Define your routes and middleware here
 app.use(express.json());
+
 
 app.get("/", (req, res) => {
   res.json("hello");
