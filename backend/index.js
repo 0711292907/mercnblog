@@ -35,8 +35,6 @@ app.get("/posts", (req, res) => {
   });
 });
 
-
-
 app.post("/posts", (req, res) => {
   const query = "INSERT INTO posts(`title`, `descr`, `user_name`) VALUES (?)";
 
@@ -44,14 +42,20 @@ app.post("/posts", (req, res) => {
     req.body.title,
     req.body.descr,
     req.body.user_name,
-
   ];
 
   db.query(query, [values], (err, data) => {
-    if (err) return res.send(err);
-    return res.json("post has been updated");
+    if (err) {
+      console.error("Error inserting post:", err);
+      res.status(500).json({ error: "Internal server error" });
+    } else {
+      res.json({ message: "Post has been updated successfully" });
+    }
   });
 });
+
+
+
 
 
 app.listen(8800, () => {
