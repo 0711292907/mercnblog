@@ -39,9 +39,9 @@ app.post("/posts", (req, res) => {
   const query = "INSERT INTO posts(`title`, `descr`, `user_name`) VALUES (?)";
 
   const values = [
-    "the",
-    "mmsnhdhdhd",
-    "MElsoft"
+    req.body.title,
+    req.body.descr,
+    req.body.user_name,
   ];
 
   db.query(query, [values], (err, data) => {
