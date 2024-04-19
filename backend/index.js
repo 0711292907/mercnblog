@@ -10,6 +10,9 @@ const db = mysql.createConnection({
   database: "test",
 });
 
+
+app.use(express.json());
+
 app.get("/", (req, res) => {
   res.json("hello");
 });
@@ -34,9 +37,9 @@ app.post("/posts", (req, res) => {
   const query = "INSERT INTO posts(`title`, `descr`, `user_name`) VALUES (?)";
 
   const values = [
-    "Good day",
-    "ufhgfgfhgrhghuguhghugr",
-    "Gift"
+    req.body.title,
+    req.body.descr,
+    req.body.user_name,
 
   ];
 
