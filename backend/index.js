@@ -15,6 +15,19 @@ app.get("/", (req, res) => {
 });
 
 
+app.get("/posts", (req, res) => {
+  const query = "SELECT * FROM test.posts"; 
+
+  db.query(query, (err, results) => {
+    if (err) {
+      console.error("Error fetching posts:", err);
+      res.status(500).json({ error: "Internal server error" });
+    } else {
+      res.json(results);
+    }
+  });
+});
+
 app.listen(8800, () => {
     console.log("Connected to backend.");
   });
