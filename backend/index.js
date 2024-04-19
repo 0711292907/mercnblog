@@ -28,6 +28,25 @@ app.get("/posts", (req, res) => {
   });
 });
 
+
+
+app.post("/posts", (req, res) => {
+  const query = "INSERT INTO posts(`title`, `descr`, `user_name`) VALUES (?)";
+
+  const values = [
+    "Good day",
+    "ufhgfgfhgrhghuguhghugr",
+    "Gift"
+
+  ];
+
+  db.query(q, [values], (err, data) => {
+    if (err) return res.send(err);
+    return res.json(data);
+  });
+});
+
+
 app.listen(8800, () => {
     console.log("Connected to backend.");
   });
