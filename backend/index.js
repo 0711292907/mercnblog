@@ -54,6 +54,20 @@ app.post("/posts", (req, res) => {
   });
 });
 
+app.delete("/posts/:postId", (req, res) => {
+  const postId = req.params.postId; // Extract the post ID from the URL parameter
+
+  const deleteQuery = "DELETE FROM test.posts WHERE id = ?";
+  db.query(deleteQuery, [postId], (err, result) => {
+    if (err) {
+      console.error("Error deleting post:", err);
+      res.status(500).json({ error: "Internal server error" });
+    } else {
+      res.json({ message: "Post has been deleted successfully" });
+    }
+  });
+});
+
 
 app.listen(8800, () => {
     console.log("Connected to backend.");
