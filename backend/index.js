@@ -13,6 +13,8 @@ const db = mysql.createConnection({
 // Create the Express app
 const app = express();
 
+//cors
+app.use(cors());
 // Define your routes and middleware here
 app.use(express.json());
 
