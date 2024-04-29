@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import PostList from '../Pages/PostList';
-import CreatePost from '../Pages/CreatePost';
-import UpdatePost from '../Pages/UpdatePost';
+import PostList from './Pages/PostList';
+import CreatePost from './Pages/CreatePost';
+import UpdatePost from './Pages/UpdatePost';
 
 
 
