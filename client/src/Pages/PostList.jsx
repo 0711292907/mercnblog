@@ -12,3 +12,4 @@ const PostList = ({ posts, onUpdate, onDelete }) => {
 };
 
 export default PostList;
+
