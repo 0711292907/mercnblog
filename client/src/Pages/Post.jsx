@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 
 const Post = ({ post, onUpdate, onDelete }) => {
   const [isEditing, setIsEditing] = useState(false);
-  const [updatedPost, setUpdatedPost] = useState(post);
+  const [updatedPost, setUpdatedPost] = useState({
+    title: '',
+    descr: '',
+    user_name: '',
+  });
 
   const handleEditClick = () => {
     setIsEditing(true);
