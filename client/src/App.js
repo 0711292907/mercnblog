@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CreatePost from "./Pages/CreatePost";
 import Home from "./Pages/Home";
 import UpdatePost from "./Pages/UpdatePost";
-import PostList from "./Pages/PostList";
+import Post from "./Pages/Post";
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/CreatePost" element={<CreatePost />} />
           <Route path="/UpdatePost" element={<UpdatePost />} />
-          <Route path="/PostList" element={<PostList />} />
+          <Route path="/Post" element={<Post />} />
           
         </Routes>
       </BrowserRouter>
