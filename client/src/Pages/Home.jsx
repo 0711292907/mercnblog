@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import CreatePost from "./CreatePost";
-
+import PostList from "./PostList";
 
 import axios from "axios";
 
