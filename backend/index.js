@@ -20,6 +20,7 @@ app.use(cors());
 
 // Parse incoming JSON data
 
+app.use(express.json());
 
 // Define routes and handlers
 
