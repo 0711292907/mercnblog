@@ -5,10 +5,10 @@ import cors from "cors"; // Import the CORS middleware
 
 // Create a MySQL database connection
 const db = mysql.createConnection({
-  host: "localhost", // Database host (change to your actual database host)
-  user: "root", // Database user (change to your actual username)
-  password: "Mur@ngi02", // Database password (change to your actual password)
-  database: "test", // Database name (change to your actual database name)
+  host: "localhost", // Database host 
+  user: "root", // Database user 
+  password: "Mur@ngi02", 
+  database: "test", // Database name 
 });
 
 // Create the Express app
