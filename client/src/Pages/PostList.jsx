@@ -37,7 +37,8 @@ const PostList = () => {
     } catch (error) {
       console.error('Error deleting post:', error);
     }
-  };
+  };  
+  
 
   return (
     <ul>
