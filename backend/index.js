@@ -17,8 +17,9 @@ const app = express();
 // Enable CORS (Cross-Origin Resource Sharing) for all routes
 app.use(cors());
 
+
 // Parse incoming JSON data
-app.use(express.json());
+
 
 // Define routes and handlers
 
