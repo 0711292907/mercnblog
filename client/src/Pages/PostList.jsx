@@ -10,6 +10,7 @@ const PostList = () => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get('http://localhost:8800/posts'); // Fetch posts from API
+        console.log(response)
         setPosts(response.data); // Update state with fetched posts
       } catch (error) {
         console.error('Error fetching posts:', error);
