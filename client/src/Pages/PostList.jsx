@@ -44,7 +44,7 @@ const PostList = () => {
   return (
     <ul>
       {posts.map((post) => (
-        <Post key={post.id}  onUpdate={handleUpdate} onDelete={handleDelete} />
+        <Post key={post.id} post={post} onUpdate={handleUpdate} onDelete={handleDelete} />
       ))}
     </ul>
   );
