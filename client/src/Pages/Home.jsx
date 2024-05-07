@@ -41,15 +41,7 @@ const Home = () => {
       }
     };
   
-    const handlePostDelete = async (postId) => {
-      try {
-        await axios.delete(`http://localhost:8800/posts/${postId}`);
-        const updatedPosts = posts.filter((post) => post.id !== postId);
-        setPosts(updatedPosts);
-      } catch (error) {
-        console.error('Error deleting post:', error);
-      }
-    };
+    
   
     return (
       <div className="Home">
