@@ -41,6 +41,17 @@ const Home = () => {
       }
     };
   
+    const handlePostDelete = async (postId) => {
+      try {
+        await axios.delete(`http://localhost:8800/posts/${postId}`); // Send delete request
+    
+        // Update the state with filtered posts (excluding the deleted one)
+        setPosts(posts.filter((post) => post.id !== postId)); // Corrected filtering logic
+    
+      } catch (error) {
+        console.error('Error deleting post:', error);
+      }
+    };
     
   
     return (
