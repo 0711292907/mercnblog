@@ -1,72 +1,61 @@
-
+// Import necessary modules
 import React, { useState } from 'react';
 import axios from 'axios';
 
 const CreatePost = () => {
-  const [title, setTitle] = useState('');
-  const [descr, setDescr] = useState('');
-  const [user_name, setUser_name] = useState('');
+  // Define state variables for form fields
+  const [title, setTitle] = useState('');
+  const [descr, setDescr] = useState('');
+  const [user_name, setUser_name] = useState('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // Function to handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
 
-    const newPost = {
-      title,
-      descr,
-      user_name,
-    };
+    // Create a new post object with form data
+    const newPost = {
+      title,
+      descr,
+      user_name,
+    };
 
-    try {
-      const response = await axios.post('http://localhost:8800/posts', newPost);
-      console.log('Post created successfully:', response.data);
-      // Optionally, clear form or fetch posts again to reflect the new post
-    } catch (error) {
-      console.error('Error creating post:', error);
-    }
-  };
+    try {
+      // Send a POST request to the backend API endpoint to create a new post
+      const response = await axios.post('http://localhost:8800/posts', newPost);
+      console.log('Post created successfully:', response.data);
+      // Optionally, clear form or fetch posts again to reflect the new post
+    } catch (error) {
+      console.error('Error creating post:', error);
+    }
+  };
 
-  return (
-    <form onSubmit={handleSubmit} className="create-post-form">
-      {/* Input fields with vertical alignment and a larger description box */}
-      <div className="form-group">
-        <label htmlFor="title">Title:</label>
-        <input
-          type="text"
-          id="title"
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="descr">Description:</label>
-        <textarea
-          id="descr"
-          placeholder="Write a detailed description..."
-          value={descr}
-          onChange={(e) => setDescr(e.target.value)}
-          rows="5"
-          className="description-input" // Add styling for description box
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="user_name">User Name:</label>
-        <input
-          type="text"
-          id="user_name"
-          placeholder="User Name"
-          value={user_name}
-          onChange={(e) => setUser_name(e.target.value)}
-        />
-      </div>
+  // Return JSX for the CreatePost component
+  return (
+    <form onSubmit={handleSubmit}>
+      {/* Input fields for title, description, and user name */}
+      <input
+        type="text"
+        placeholder="Title"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Description"
+        value={descr}
+        onChange={(e) => setDescr(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="User Name"
+        value={user_name}
+        onChange={(e) => setUser_name(e.target.value)}
+      />
 
-      {/* Submit button with some basic styling */}
-      <button type="submit" className="create-post-button">
-        Create Post
-      </button>
-    </form>
-  );
+      {/* Submit button */}
+      <button type="submit">Create Post</button>
+    </form>
+  );
 };
 
 export default CreatePost;
-
