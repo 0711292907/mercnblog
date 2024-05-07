@@ -1,6 +1,7 @@
 // Import necessary modules
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 
 const CreatePost = () => {
   // Define state variables for form fields
@@ -30,32 +31,34 @@ const CreatePost = () => {
   };
 
   // Return JSX for the CreatePost component
-  return (
-    <form onSubmit={handleSubmit}>
-      {/* Input fields for title, description, and user name */}
-      <input
-        type="text"
-        placeholder="Title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Description"
-        value={descr}
-        onChange={(e) => setDescr(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="User Name"
-        value={user_name}
-        onChange={(e) => setUser_name(e.target.value)}
-      />
+ return (
+ <form onSubmit={handleSubmit}>
+ {/* Input fields for title, description, and user name */}
+<input
+ type="text"
+placeholder="Title"
+ value={title}
+ onChange={(e) => setTitle(e.target.value)}
+ />
+ <input
+ type="text"
+placeholder="Description"
+ value={descr}
+ onChange={(e) => setDescr(e.target.value)}
+ />
+ <input
+type="text"
+ placeholder="User Name"
+ value={user_name}
+ onChange={(e) => setUser_name(e.target.value)}
+ />
 
-      {/* Submit button */}
-      <button type="submit">Create Post</button>
-    </form>
-  );
+ {/* Submit button */}
+ <button type="submit">Create Post</button>
+ 
+      <Link to="/">See all Posts</Link>
+ </form>
+ );
 };
 
 export default CreatePost;
