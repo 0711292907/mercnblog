@@ -23,11 +23,19 @@ const PostList = () => {
   }, []); // Empty dependency array to fetch posts only once
 
   const handleUpdate = async (updatedPost) => {
-    // ... your update logic
+    // ... your update logic (implement if needed)
   };
 
   const handleDelete = async (postId) => {
-    // ... your delete logic
+    try {
+      await axios.delete(`http://localhost:8800/posts/${postId}`); // Send delete request
+
+      // Update the state with filtered posts (excluding the deleted one)
+      setPosts(posts.filter((post) => post.id !== postId)); 
+    } catch (error) {
+      console.error('Error deleting post:', error);
+      // Optionally, display an error message to the user
+    }
   };
 
   const renderPosts = () => {
