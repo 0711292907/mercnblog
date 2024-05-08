@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import './CreatePost.css';
+import '../CreatePost.css';
 
 const CreatePost = () => {
   // Define state variables for form fields
