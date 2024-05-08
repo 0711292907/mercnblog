@@ -12,7 +12,7 @@ const Home = () => {
         </div>
         <ul className="navbar-nav">
           <li>
-            <a href="/create-post">Create Post</a>
+            <a href="/CreatePost">Create Post</a>
           </li>
           <li>
             <a href="/posts">See All Posts</a>
