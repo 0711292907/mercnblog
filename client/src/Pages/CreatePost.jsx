@@ -57,7 +57,7 @@ type="text"
  {/* Submit button */}
  <button type="submit">Create Post</button>
  
-      <Link to="/">See all Posts</Link>
+      <Link to="/PostList">See all Posts</Link>
  </form>
  );
 };
