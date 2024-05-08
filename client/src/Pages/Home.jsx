@@ -15,7 +15,7 @@ const Home = () => {
             <a href="/CreatePost">Create Post</a>
           </li>
           <li>
-            <a href="/posts">See All Posts</a>
+            <a href="/PostList">See All Posts</a>
           </li>
         </ul>
       </nav>
