@@ -1,66 +1,56 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
-import CreatePost from "./CreatePost";
-import PostList from "./PostList";
-
-import axios from "axios";
+import React from 'react';
+//import './Home.css'; // Import the CSS file
 
 const Home = () => {
-    const [posts, setPosts] = useState([]);
-  
-    useEffect(() => {
-      const fetchPosts = async () => {
-        try {
-          const response = await axios.get('http://localhost:8800/posts');
-          setPosts(response.data);
-        } catch (error) {
-          console.error('Error fetching posts:', error);
-        }
-      };
-  
-      fetchPosts();
-    }, []); // Empty dependency array ensures this runs only once during initial render
-  
-    const handlePostCreate = async (newPost) => {
-      try {
-        const response = await axios.post('http://localhost:8800/posts', newPost);
-        setPosts([...posts, response.data]); // Add new post to state
-      } catch (error) {
-        console.error('Error creating post:', error);
-      }
-    };
-  
-    const handlePostUpdate = async (updatedPost) => {
-      try {
-        await axios.put(`http://localhost:8800/posts/${updatedPost.id}`, updatedPost);
-        const updatedPosts = posts.map((post) => (post.id === updatedPost.id ? updatedPost : post));
-        setPosts(updatedPosts);
-      } catch (error) {
-        console.error('Error updating post:', error);
-      }
-    };
-  
-    const handlePostDelete = async (postId) => {
-      try {
-        await axios.delete(`http://localhost:8800/posts/${postId}`); // Send delete request
-    
-        // Update the state with filtered posts (excluding the deleted one)
-        setPosts(posts.filter((post) => post.id !== postId)); // Corrected filtering logic
-    
-      } catch (error) {
-        console.error('Error deleting post:', error);
-      }
-    };
-    
-  
-    return (
-      <div className="Home">
-        <h1>My Blog</h1>
-        <CreatePost onCreate={handlePostCreate} />
-        <PostList posts={posts} onUpdate={handlePostUpdate} onDelete={handlePostDelete} />
-      </div>
-    );
-  };
+  return (
+    <div className="Home">
+      {/* Navigation Bar */}
+      <nav className="navbar">
+        <div className="navbar-brand">
+          <img src="https://logos.flamingtext.com/Word-Logos/Blog-design-sketch-name.png" alt="Blog Logo"/>
+          <h1>My Awesome Blog</h1>
+        </div>
+        <ul className="navbar-nav">
+          <li>
+            <a href="/create-post">Create Post</a>
+          </li>
+          <li>
+            <a href="/posts">See All Posts</a>
+          </li>
+        </ul>
+      </nav>
 
-  export default Home;
+      {/* Hero Section */}
+      <section className="hero">
+        <h2>Welcome to My Blog!</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+          aliquet quam id dui posuere blandit. Vestibulum ante ipsum primis in
+          faucibus orci luctus et ultrices posuere cubilia curae; Maecenas
+          pulvinar lorem quis lorem iaculis vehicula.
+        </p>
+      </section>
+
+      {/* Featured Posts Section (Optional) */}
+      <section className="featured-posts">
+        <h2>Featured Posts</h2>
+        {/* Replace with logic to fetch and display featured posts */}
+        <ul>
+          <li>
+            <a href="/post/1">Post Title 1</a>
+          </li>
+          <li>
+            <a href="/post/2">Post Title 2</a>
+          </li>
+        </ul>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <p>&copy; {new Date().getFullYear()} My Awesome Blog</p>
+      </footer>
+    </div>
+  );
+};
+
+export default Home;
