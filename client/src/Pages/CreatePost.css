@@ -1,0 +1,59 @@
+/* CreatePost component styles */
+
+.create-post-form {
+    display: flex; /* Make the form elements arrange vertically */
+    flex-direction: column; /* Align elements in a column */
+    align-items: center; /* Center elements horizontally */
+    justify-content: center; /* Center elements vertically within available space (optional for responsiveness) */
+    margin: 0 auto; /* Center the form horizontally on the page */
+    width: 50%; /* Set a width for the form (adjust as needed) */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px; /* Add rounded corners */
+    background-color: #f5f5f5;
+  }
+  
+  .create-post-form input {
+    margin-bottom: 15px; /* Add space between input boxes */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; /* Make input boxes fill the available width */
+  }
+  
+  .create-post-form input[type="text"]:first-child,
+  .create-post-form input[type="text"]:nth-child(2) {
+    height: 40px; /* Set height for title and user name input boxes */
+  }
+  
+  .create-post-form input[type="text"]:nth-child(3) {
+    height: 100px; /* Set a larger height for the description box (square) */
+  }
+  
+  .create-post-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; /* Indicate clickable action */
+    transition: background-color 0.3s ease; /* Smooth color transition on hover */
+  }
+  
+  .create-post-form button:hover {
+    background-color: #0069d9; /* Change button color on hover */
+  }
+  
+  .create-post-form a {
+    text-decoration: none;
+    color: #333;
+    margin-top: 10px; /* Add space after the submit button */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+  }
+  
+  .create-post-form a:hover {
+    color: #007bff; /* Change link color on hover */
+  }
+  
