@@ -34,7 +34,7 @@ const Home = () => {
       {/* Featured Posts Section (Optional) */}
       <section className="featured-posts">
         <h2>Featured Posts</h2>
-        {/* Replace with logic to fetch and display featured posts */}
+        {/*  display featured posts */}
         <ul>
           <li>
             <a href="/post/1">Post Title 1</a>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Post from './Post';
 import axios from 'axios';
+import CreatePost from './CreatePost'; 
 
 const PostList = () => {
   const [posts, setPosts] = useState([]);
@@ -31,7 +32,7 @@ const PostList = () => {
       await axios.delete(`http://localhost:8800/posts/${postId}`); // Send delete request
 
       // Update the state with filtered posts (excluding the deleted one)
-      setPosts(posts.filter((post) => post.id !== postId)); 
+      setPosts(posts.filter((post) => post.id !== postId));
     } catch (error) {
       console.error('Error deleting post:', error);
       // Optionally, display an error message to the user
@@ -54,8 +55,14 @@ const PostList = () => {
     }
   };
 
+  const handlePostCreated = (newPost) => {
+    setPosts([...posts, newPost]); // Add the new post to the existing posts array
+  };
+
   return (
     <div>
+      {/* Pass the handlePostCreated function as a prop */}
+      <CreatePost onPostCreated={handlePostCreated} />
       {renderPosts()}
     </div>
   );
