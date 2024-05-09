@@ -52,7 +52,7 @@ const Post = ({ post, onUpdate, onDelete }) => {
         <div class="card">
         <h3>{updatedPost.title}</h3>
           <p>{updatedPost.descr}</p>
-          <p>Author: {updatedPost.user_name}</p>
+          <h6>Author: {updatedPost.user_name}</h6>
           <button onClick={handleEditClick}>Edit</button>
           <button onClick={handleDelete}>Delete</button>
           <Link to="/">Home</Link>
