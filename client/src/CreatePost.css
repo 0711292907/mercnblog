@@ -1,0 +1,31 @@
+.create-post-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Ensures content is centered vertically */
+  width: 100%;
+}
+
+.create-post-input,
+.create-post-description {
+  margin-bottom: 10px; /* Add space between inputs */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.create-post-description {
+  width: 300px; /* Set width equal to input boxes */
+  height: 150px; /* Adjust height as needed */
+  resize: none; /* Disable description box resizing */
+}
+
+.create-post-button {
+  background-color: #4CAF50; /* Green color for the button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
