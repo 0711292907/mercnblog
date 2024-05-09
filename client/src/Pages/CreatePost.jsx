@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import '../CreatePost.css'; 
 
 const CreatePost = (props) => {
@@ -60,6 +61,7 @@ const CreatePost = (props) => {
       <button type="submit" onClick={handleSubmit} className="create-post-button">
         Create Post
       </button>
+      <Link to="/PostList">See Post</Link>
     </div>
   );
 };
