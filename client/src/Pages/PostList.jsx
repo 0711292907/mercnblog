@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Post from './Post';
 import axios from 'axios';
-import CreatePost from './CreatePost'; 
 
 const PostList = () => {
   const [posts, setPosts] = useState([]);
@@ -55,14 +54,11 @@ const PostList = () => {
     }
   };
 
-  const handlePostCreated = (newPost) => {
-    setPosts([...posts, newPost]); // Add the new post to the existing posts array
-  };
+  // You can implement your own new post creation logic here
+  // (e.g., a form or button that triggers an API call to create a new post)
 
   return (
     <div>
-      {/* Pass the handlePostCreated function as a prop */}
-      <CreatePost onPostCreated={handlePostCreated} />
       {renderPosts()}
     </div>
   );
