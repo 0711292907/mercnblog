@@ -24,10 +24,10 @@ const Home = () => {
       <section className="hero">
         <h2>Welcome to My Blog!</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-          aliquet quam id dui posuere blandit. Vestibulum ante ipsum primis in
-          faucibus orci luctus et ultrices posuere cubilia curae; Maecenas
-          pulvinar lorem quis lorem iaculis vehicula.
+          Hi am Ratshikhopha Murangi  A software Developer student , Come have a ride  on
+          my personal blog website this is were i share all about my dialy life routines. Trust me
+          once you start reading my posts you'll definetly be hooked for life 
+          I hope u enjoy the ride cheers .
         </p>
       </section>
 
