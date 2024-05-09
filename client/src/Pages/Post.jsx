@@ -48,16 +48,17 @@ const Post = ({ post, onUpdate, onDelete }) => {
           <button onClick={handleCancelEdit}>Cancel</button>
         </div>
       ) : (
-        <div >
-  
-          <h3>{updatedPost.title}</h3>
+        <div class="card-container">
+        <div class="card">
+        <h3>{updatedPost.title}</h3>
           <p>{updatedPost.descr}</p>
           <p>Author: {updatedPost.user_name}</p>
           <button onClick={handleEditClick}>Edit</button>
           <button onClick={handleDelete}>Delete</button>
           <Link to="/">Home</Link>
-      
         </div>
+      </div>
+      
         
       )}
     </li>
