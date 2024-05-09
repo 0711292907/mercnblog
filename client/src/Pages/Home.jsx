@@ -15,7 +15,7 @@ const Home = () => {
             <a href="/CreatePost">Create Post</a>
           </li>
           <li>
-            <a href="/PostList">See All Posts</a>
+            <a href="/PostList">View Posts</a>
           </li>
         </ul>
       </nav>
@@ -37,10 +37,10 @@ const Home = () => {
         {/*  display featured posts */}
         <ul>
           <li>
-            <a href="/post/1">Post Title 1</a>
+            <a href="/post/1">My Daily Life</a>
           </li>
           <li>
-            <a href="/post/2">Post Title 2</a>
+            <a href="/post/2">Greate Memories</a>
           </li>
         </ul>
       </section>
