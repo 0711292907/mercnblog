@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Post from './Post';
 import axios from 'axios';
 
+
 const PostList = () => {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(false); // Track loading state
@@ -23,7 +24,7 @@ const PostList = () => {
   }, []); // Empty dependency array to fetch posts only once
 
   const handleUpdate = async (updatedPost) => {
-    // ... your update logic (implement if needed)
+    //  update logic 
   };
 
   const handleDelete = async (postId) => {
@@ -54,8 +55,7 @@ const PostList = () => {
     }
   };
 
-  // You can implement your own new post creation logic here
-  // (e.g., a form or button that triggers an API call to create a new post)
+  
 
   return (
     <div>

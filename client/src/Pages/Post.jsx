@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 
 
 const Post = ({ post, onUpdate, onDelete }) => {
@@ -54,9 +54,13 @@ const Post = ({ post, onUpdate, onDelete }) => {
           <p>Author: {updatedPost.user_name}</p>
           <button onClick={handleEditClick}>Edit</button>
           <button onClick={handleDelete}>Delete</button>
+          <Link to="/">Home</Link>
         </div>
+        
       )}
     </li>
+  
+
   );
 };
 

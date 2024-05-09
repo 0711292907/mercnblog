@@ -1,8 +1,7 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import '../CreatePost.css'; // Assuming CreatePost.css exists
+import '../CreatePost.css'; 
 
 const CreatePost = (props) => {
   // Define state variables for form fields
@@ -61,8 +60,6 @@ const CreatePost = (props) => {
       <button type="submit" onClick={handleSubmit} className="create-post-button">
         Create Post
       </button>
-
-      <Link to="/PostList">See all Posts</Link>
     </div>
   );
 };
